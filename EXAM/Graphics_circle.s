@@ -18,25 +18,21 @@ __main  FUNCTION
 	VLDR.F32 S28,=240;   Y Coordinate of mid point
 	MOV  R0, #0x20000000  ; Memory location to store the result
 	STR R3,[R0]
-    ;MOV  R3, #0x20000001  ; Memory location to store the result
-	;STR R4,[R0]
+   
 
-Angle   CMP R2,#40		;Compare 'i' and 'n' 
-		BLE ORDINATES		;if i < n goto LOOP
+Angle   CMP R2,#40		
+		BLE ORDINATES		
         B   stop
 		
 ORDINATES	
 		    BL cosine
 		    VMUL.F32 S9,S24,S9
-		   ;VCVT.U32.F32 S9,S9
 		    VADD.F32 S9,S9,S27
 		    VMOV.F32 R0,S9;
 		    BL printMsg
 			
 			BL sine  
             VMUL.F32 S0,S24,S0
-		   ;VCVT.U32.F32 S0,S0
-		   ;VADD.F32 S0,S0,S17;
 		    VADD.F32 S0,S0,S28
 		    VMOV.F32 R0,S0;
 		    BL printMsg
@@ -44,16 +40,13 @@ ORDINATES
 			
 		    VLDR.F32 S17,=10;
 		    VADD.F32 S1,S1,S17;
-		   ;VADD.F32 S18,s18,s19;
-		   ;VMOV.F32 R3,S18;
-		   ;VMOV.F32 R4,S16;
 		    MOV  R0, #0x20000000  ; Memory location to store the result
 	        LDR R2,[R0]
 		    ADD R2,R2,#1;
 		    STR R2,[R0]
 		    B Angle
 		   ;B  stop
-;angle	
+
 sine     VMUL.F32 S2,S1,S29 ; (pi/180)*angle - given angle is converted to radians 
 
 	    VMUL.F32 S3,S2,S2 ; x*x
