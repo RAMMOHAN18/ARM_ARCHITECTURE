@@ -4,7 +4,7 @@ THUMB
 	 IMPORT printMsg
      ENTRY 
 __main    FUNCTION
-		MOV R3,#21
+		MOV R3,#21     ;No.of Iterations
 		MOV R4,#1
 		
 		VLDR.F32 S7,=-5	; 'x' Value
