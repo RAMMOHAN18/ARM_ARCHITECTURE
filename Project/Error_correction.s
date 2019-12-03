@@ -162,7 +162,7 @@ __main    FUNCTION
 	MOV R7, R7, LSL R1
 
 	
-	EOR R0, R0, R7      ;Flips the bit in bit 8 of R0
+	EOR R0, R0, R7      ;Flips the bit in bit 8 of R0 and this is the corrected final result.
 
 
 stop	B	stop
