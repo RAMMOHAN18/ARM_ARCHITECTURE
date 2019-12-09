@@ -407,4 +407,5 @@ __notfunc FUNCTION
 	 ENDFUNC  
 	 
 stop B stop
+    ENDFUNC
     END
